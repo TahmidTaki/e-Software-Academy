@@ -1,7 +1,21 @@
 import React from "react";
+import { useContext } from "react";
 import { MdCastForEducation } from "react-icons/md";
+import { Link } from "react-router-dom";
+import { AuthContext } from "../../../contexts/AuthProvider/AuthProvider";
 
 const Header = () => {
+  const { user, logOut } = useContext(AuthContext);
+
+  const handleLogOut = () => {
+    logOut()
+      .then(() => {
+        console.log(user.uid);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
   return (
     <div className="navbar bg-base-100">
       <div className="navbar-start">
@@ -57,7 +71,15 @@ const Header = () => {
         </ul>
       </div>
       <div className="navbar-end">
-        <a className="btn">Log In</a>
+        {user?.uid ? (
+          <button onClick={handleLogOut} className="btn">
+            Log Out
+          </button>
+        ) : (
+          <Link to="/login" className="btn">
+            Log In
+          </Link>
+        )}
       </div>
     </div>
   );

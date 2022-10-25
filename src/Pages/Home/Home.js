@@ -1,18 +1,23 @@
 import React from "react";
+import { useContext } from "react";
+import { AuthContext } from "../../contexts/AuthProvider/AuthProvider";
 
 const Home = () => {
+  const { checkdata } = useContext(AuthContext);
   return (
     <div>
-      <div
-        className="hero min-h-screen"
-        style={{ backgroundImage: `url("https://placeimg.com/1000/800/arch")` }}
-      >
-        <div className="hero-overlay bg-opacity-75"></div>
-        <div className="hero-content text-center text-neutral-content">
-          <div className="max-w-md bg-stone-500 p-10 rounded-md">
+      <div className="hero min-h-screen bg-base-200">
+        <div className="hero-content flex-col lg:flex-row">
+          <img
+            src="https://i.ibb.co/S34k10t/Business-SVG.png"
+            className="max-w-sm rounded-lg shadow-2xl p-4"
+            alt="Welcome,"
+          />
+          <div>
             <h1 className="mb-5 text-5xl font-bold">
               Become A Software Engineer With Us
             </h1>
+
             <p className="mb-5 text-lg font-semibold">
               Software engineers, often referred to as software developers,
               design innovative software for businesses and clients. From a

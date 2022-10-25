@@ -38,8 +38,8 @@ const Header = () => {
             </li>
           </ul>
         </div>
-        <a className="btn btn-ghost normal-case text-xl">
-          <MdCastForEducation className="mx-1" /> 𝚎-𝚂𝚘𝚏𝚝𝚠𝚊𝚛𝚎-𝙰𝚌𝚊𝚍𝚎𝚖𝚢
+        <a className="btn btn-ghost normal-case text-sm lg:text-xl">
+          <MdCastForEducation className="mx-1" /> e-Software-Academy
         </a>
       </div>
       <div className="navbar-center hidden lg:flex">

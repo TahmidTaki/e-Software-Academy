@@ -3,7 +3,7 @@ import { useContext } from "react";
 import { AuthContext } from "../../contexts/AuthProvider/AuthProvider";
 
 const Login = () => {
-  const { logIn } = useContext(AuthContext);
+  const { logIn, googleLogin } = useContext(AuthContext);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -17,6 +17,17 @@ const Login = () => {
         console.log(user);
       })
       .catch((err) => {
+        console.log(err);
+      });
+  };
+
+  const handleGoogleSignIn = () => {
+    googleLogin()
+      .then((res) => {
+        const user = res.user;
+        console.log(user);
+      })
+      .then((err) => {
         console.log(err);
       });
   };
@@ -72,6 +83,24 @@ const Login = () => {
               </button>
             </div>
           </form>
+          <div>
+            <span>-------------OR------------- </span>
+            <p>
+              <span>
+                <button
+                  onClick={handleGoogleSignIn}
+                  className="btn btn-outline btn-wide"
+                >
+                  Sign in with Google
+                </button>
+              </span>
+              <span>
+                <button className="btn btn-outline btn-wide">
+                  Sign in with GitHub
+                </button>
+              </span>
+            </p>
+          </div>
         </div>
       </div>
     </div>

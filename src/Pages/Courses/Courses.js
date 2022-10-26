@@ -1,5 +1,5 @@
 import React from "react";
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import CourseCardComponent from "../CourseCardComponent/CourseCardComponent";
 
 const Courses = () => {
@@ -7,37 +7,26 @@ const Courses = () => {
   return (
     <div>
       <h2>All Courses: {courses.length}</h2>
-      {courses.map((course) => (
-        <CourseCardComponent
-          key={course.id}
-          course={course}
-        ></CourseCardComponent>
-      ))}
-      <div className="drawer drawer-mobile">
-        <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
-        <div className="drawer-content flex flex-col items-center justify-center">
-          {/* <!-- Page content here --> */}
-
-          <label
-            htmlFor="my-drawer-2"
-            className="btn btn-primary drawer-button lg:hidden"
-          >
-            View in List Format
-          </label>
-        </div>
-
-        {/* drawer  */}
-        <div className="drawer-side">
-          <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
-          <ul className="menu p-4 overflow-y-auto w-80 bg-base-100 text-base-content">
-            {/* <!-- Sidebar content here --> */}
-            {courses.map((course) => (
-              <li key={course.id}>
-                <a>{course.title}</a>
+      <div class="flex mb-4">
+        <div class="md:w-1/3 lg:w-1/4 bg-base-400 h-12">
+          {courses.map((course) => (
+            <Link key={course.id}>
+              <li>
+                {course.title}
                 <div className="divider"></div>
               </li>
+            </Link>
+          ))}
+        </div>
+        <div className="md:w-1/2 lg:w-3/4 bg-base-500 h-12 mb-8">
+          <div className="flex flex-wrap justify-center">
+            {courses.map((course) => (
+              <CourseCardComponent
+                key={course.id}
+                course={course}
+              ></CourseCardComponent>
             ))}
-          </ul>
+          </div>
         </div>
       </div>
     </div>

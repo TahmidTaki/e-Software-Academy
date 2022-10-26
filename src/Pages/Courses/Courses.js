@@ -4,9 +4,11 @@ import CourseCardComponent from "../CourseCardComponent/CourseCardComponent";
 
 const Courses = () => {
   const courses = useLoaderData();
+
   return (
     <div>
       <h2>All Courses: {courses.length}</h2>
+
       <div class="flex mb-4">
         <div class="md:w-1/3 lg:w-1/4 bg-base-400 h-12">
           {courses.map((course) => (

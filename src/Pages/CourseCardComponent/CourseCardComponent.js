@@ -1,7 +1,10 @@
 import React from "react";
+import { FaStarHalfAlt, FaRegEye } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const CourseCardComponent = ({ course }) => {
   const {
+    id,
     image_url,
     title,
     total_view,
@@ -23,10 +26,18 @@ const CourseCardComponent = ({ course }) => {
           </h2>
           <p>{details}</p>
           <div className="card-actions justify-end">
-            <div className="badge badge-outline">{rating.number}</div>
-            <div className="badge badge-outline">{total_view}</div>
+            <div className="badge badge-outline">
+              <FaStarHalfAlt className="mr-1" />
+              {rating.number}
+            </div>
+            <div className="badge badge-outline">
+              <FaRegEye className="mr-1" />
+              {total_view}
+            </div>
           </div>
-          <button className="btn btn-primary">Go to Course</button>
+          <Link to={`/courses/${id}`} className="btn btn-primary">
+            Go to Course
+          </Link>
         </div>
       </div>
     </div>

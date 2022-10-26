@@ -30,6 +30,16 @@ export const routes = createBrowserRouter([
         ),
       },
       {
+        path: "/checkout/:id",
+        element: (
+          <CheckOut>
+            <CheckOutPage></CheckOutPage>
+          </CheckOut>
+        ),
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/checkout/${params.id}`),
+      },
+      {
         path: "/register",
         element: <Register></Register>,
       },

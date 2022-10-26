@@ -78,7 +78,7 @@ const CourseDetails = () => {
           <p className="mt-4">{details}</p>
 
           <div className="card-actions justify-center">
-            <Link to="/checkout">
+            <Link to={`/checkout/${id}`}>
               <button className="mt-4 btn btn-primary btn-wide">
                 Get Premium Access
               </button>

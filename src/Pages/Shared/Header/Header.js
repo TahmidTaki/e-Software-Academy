@@ -41,7 +41,7 @@ const Header = () => {
             className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
           >
             <li>
-              <a>Courses</a>
+              <Link to="/courses">Courses</Link>
             </li>
             <li>
               <a>FAQ</a>
@@ -52,14 +52,14 @@ const Header = () => {
             </li>
           </ul>
         </div>
-        <a className="btn btn-ghost normal-case text-sm lg:text-xl">
+        <Link to="/" className="btn btn-ghost normal-case text-sm lg:text-xl">
           <MdCastForEducation className="mx-1" /> e-Software-Academy
-        </a>
+        </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal p-0">
           <li>
-            <a>Courses</a>
+            <Link to="/courses">Courses</Link>
           </li>
           <li>
             <a>FAQ</a>

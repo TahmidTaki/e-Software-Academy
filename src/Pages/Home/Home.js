@@ -1,5 +1,6 @@
 import React from "react";
 import { useContext } from "react";
+import { Link } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthProvider/AuthProvider";
 
 const Home = () => {
@@ -27,7 +28,9 @@ const Home = () => {
               Interested in changing your career to software
               development/engineering?
             </p>
-            <button className="btn btn-accent">Register</button>
+            <Link to="/register">
+              <button className="btn btn-accent">Register</button>
+            </Link>
           </div>
         </div>
       </div>

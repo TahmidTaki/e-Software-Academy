@@ -12,7 +12,7 @@ const Courses = () => {
       <div class="flex mb-4">
         <div class="md:w-1/3 lg:w-1/4 bg-base-400 h-12">
           {courses.map((course) => (
-            <Link key={course.id}>
+            <Link key={course.id} to={`/courses/${course.id}`}>
               <li>
                 {course.title}
                 <div className="divider"></div>

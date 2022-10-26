@@ -1,10 +1,13 @@
 import React from "react";
+import { useState } from "react";
 import { useContext } from "react";
+import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthProvider/AuthProvider";
 
 const Login = () => {
   const { logIn, googleLogin } = useContext(AuthContext);
-
+  const [error, setError] = useState("");
+  const navigate = useNavigate();
   const handleSubmit = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -15,9 +18,12 @@ const Login = () => {
       .then((res) => {
         const user = res.user;
         console.log(user);
+        form.reset();
+        navigate("/");
       })
       .catch((err) => {
         console.log(err);
+        setError(err);
       });
   };
 
@@ -26,6 +32,7 @@ const Login = () => {
       .then((res) => {
         const user = res.user;
         console.log(user);
+        navigate("/");
       })
       .then((err) => {
         // console.log(err);
@@ -78,6 +85,7 @@ const Login = () => {
               </label>
             </div>
             <div className="form-control mt-6">
+              <p>{error.message}</p>
               <button type="submit" className="btn btn-primary">
                 Login
               </button>

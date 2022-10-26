@@ -1,8 +1,9 @@
 import React from "react";
 import { useState } from "react";
 import { useContext } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthProvider/AuthProvider";
+import { FaGoogle, FaGithubSquare } from "react-icons/fa";
 
 const Login = () => {
   const { logIn, googleLogin, gitHubSignIn } = useContext(AuthContext);
@@ -92,11 +93,17 @@ const Login = () => {
                 className="input input-bordered"
                 required
               />
-              <label className="label">
-                <a href="#" className="label-text-alt link link-hover">
-                  Forgot password?
-                </a>
-              </label>
+              <p className="mt-4 text-sm text-gray-500 dark:text-gray-400 sm:mt-0">
+                Do not have an account?
+                <Link
+                  to="/register"
+                  className="text-gray-700 underline dark:text-gray-200"
+                >
+                  {" "}
+                  Register Here
+                </Link>
+                .
+              </p>
             </div>
             <div className="form-control mt-6">
               <p>{error.message}</p>
@@ -113,15 +120,17 @@ const Login = () => {
                   onClick={handleGoogleSignIn}
                   className="btn btn-outline btn-wide"
                 >
-                  Sign in with Google
+                  <FaGoogle className="text-green-700 mr-2" /> Sign in with
+                  Google
                 </button>
               </span>
               <span>
                 <button
-                  className="btn btn-outline btn-wide"
+                  className="btn btn-outline btn-wide mt-2"
                   onClick={handleGitHubSignIn}
                 >
-                  Sign in with GitHub
+                  <FaGithubSquare className="text-red-700 mr-2" /> Sign in with
+                  GitHub
                 </button>
               </span>
             </p>

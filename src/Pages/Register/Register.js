@@ -1,10 +1,12 @@
 import React from "react";
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthProvider/AuthProvider";
 
 const Register = () => {
-  const { registerWithEmail } = useContext(AuthContext);
+  const { user } = useContext(AuthContext);
+  const navigate = useNavigate();
+  const { registerWithEmail, updateUserProfile } = useContext(AuthContext);
   const handleSubmit = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -12,7 +14,7 @@ const Register = () => {
     const email = form.email.value;
     const password = form.password.value;
     const photoURL = form.photoURL.value;
-    console.log(name, email, password, photoURL);
+    // console.log(name, email, password, photoURL);
     if (password.length < 6) {
       alert("Password should be at least 6 Characters");
       return;
@@ -23,9 +25,23 @@ const Register = () => {
         const user = res.user;
         console.log(user);
         form.reset();
+        handleUpdateUserProfile(name, photoURL);
+        navigate("/");
       })
       .catch((err) => {
         console.log(err);
+      });
+  };
+
+  const handleUpdateUserProfile = (name, photoURL) => {
+    const profile = {
+      displayName: name,
+      photoURL: photoURL,
+    };
+    updateUserProfile(profile)
+      .then(() => {})
+      .catch((e) => {
+        console.log(e);
       });
   };
 

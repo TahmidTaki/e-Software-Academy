@@ -71,8 +71,30 @@ const Header = () => {
         </ul>
       </div>
       <div className="navbar-end">
+        {user ? (
+          <div
+            className="tooltip tooltip-bottom"
+            data-tip={user?.displayName ? user?.displayName : user?.uid}
+          >
+            <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+              <div className="w-10 rounded-full">
+                <img
+                  src={
+                    user?.photoURL
+                      ? user?.photoURL
+                      : "https://www.pngfind.com/pngs/m/470-4703547_icon-user-icon-hd-png-download.png"
+                  }
+                  alt=""
+                />
+              </div>
+            </label>
+          </div>
+        ) : (
+          <></>
+        )}
+
         {user?.uid ? (
-          <button onClick={handleLogOut} className="btn">
+          <button onClick={handleLogOut} className="btn ml-2">
             Log Out
           </button>
         ) : (

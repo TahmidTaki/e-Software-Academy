@@ -1,12 +1,14 @@
 import React from "react";
 import { useState } from "react";
 import { useContext } from "react";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthProvider/AuthProvider";
 
 const Login = () => {
-  const { logIn, googleLogin } = useContext(AuthContext);
+  const { logIn, googleLogin, gitHubSignIn } = useContext(AuthContext);
   const [error, setError] = useState("");
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
   const navigate = useNavigate();
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -19,7 +21,7 @@ const Login = () => {
         const user = res.user;
         console.log(user);
         form.reset();
-        navigate("/");
+        navigate(from, { replace: true });
       })
       .catch((err) => {
         console.log(err);
@@ -32,7 +34,19 @@ const Login = () => {
       .then((res) => {
         const user = res.user;
         console.log(user);
-        navigate("/");
+        navigate(from, { replace: true });
+      })
+      .then((err) => {
+        // console.log(err);
+      });
+  };
+
+  const handleGitHubSignIn = () => {
+    gitHubSignIn()
+      .then((res) => {
+        const user = res.user;
+        console.log(user);
+        navigate(from, { replace: true });
       })
       .then((err) => {
         // console.log(err);
@@ -103,7 +117,10 @@ const Login = () => {
                 </button>
               </span>
               <span>
-                <button className="btn btn-outline btn-wide">
+                <button
+                  className="btn btn-outline btn-wide"
+                  onClick={handleGitHubSignIn}
+                >
                   Sign in with GitHub
                 </button>
               </span>

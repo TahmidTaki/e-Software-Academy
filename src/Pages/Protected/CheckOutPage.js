@@ -1,11 +1,17 @@
 import React from "react";
+import { useContext } from "react";
 import { useLoaderData } from "react-router-dom";
+import { AuthContext } from "../../contexts/AuthProvider/AuthProvider";
 
 const CheckOutPage = () => {
   const course = useLoaderData();
+  const { user } = useContext(AuthContext);
   return (
     <div>
       <h2>Course Id: {course.id}</h2>
+      <h2>
+        User Name/ID:{user?.displayName} / {user?.uid}
+      </h2>
 
       <div
         className="hero min-h-screen"

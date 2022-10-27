@@ -9,7 +9,7 @@ const Courses = () => {
     <div>
       <h2>All Courses: {courses.length}</h2>
 
-      <div class="flex mb-4">
+      <div class="flex flex-col mb:flex-row lg:flex-row mb-4">
         <div class="md:w-1/3 lg:w-1/4 bg-base-400">
           {courses.map((course) => (
             <Link key={course.id} to={`/courses/${course.id}`}>

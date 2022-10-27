@@ -50,9 +50,20 @@ const Header = () => {
             <li>
               <Link to="/blogs">Blogs</Link>
             </li>
+            <li>
+              <Link
+                to="/"
+                className="btn btn-ghost normal-case text-sm lg:text-xl"
+              >
+                e-Software-Academy
+              </Link>
+            </li>
           </ul>
         </div>
-        <Link to="/" className="btn btn-ghost normal-case text-sm lg:text-xl">
+        <Link
+          to="/"
+          className="btn btn-ghost normal-case text-sm hidden lg:flex lg:text-xl"
+        >
           <MdCastForEducation className="mx-1" /> e-Software-Academy
         </Link>
         <label className="swap swap-rotate">

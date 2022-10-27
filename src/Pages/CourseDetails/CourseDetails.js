@@ -17,7 +17,7 @@ const CourseDetails = () => {
     details,
     duration,
   } = course;
-  console.log(instructor);
+  //   console.log(instructor);
   return (
     <div className="mt-20">
       <Pdf targetRef={ref} filename="course-details.pdf">
@@ -35,7 +35,7 @@ const CourseDetails = () => {
           <div className="card-body">
             <h2 className="card-title text-3xl font-bold">{course.title}</h2>
             {/* stats starts */}
-            <div className="stats shadow">
+            <div className="stats stats-vertical lg:stats-horizontal shadow">
               <div className="stat">
                 <div className="stat-figure text-primary">
                   <svg

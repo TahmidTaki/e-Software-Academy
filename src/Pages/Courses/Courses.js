@@ -10,7 +10,7 @@ const Courses = () => {
       <h2>All Courses: {courses.length}</h2>
 
       <div class="flex mb-4">
-        <div class="md:w-1/3 lg:w-1/4 bg-base-400 h-12">
+        <div class="md:w-1/3 lg:w-1/4 bg-base-400">
           {courses.map((course) => (
             <Link key={course.id} to={`/courses/${course.id}`}>
               <li>
@@ -20,7 +20,7 @@ const Courses = () => {
             </Link>
           ))}
         </div>
-        <div className="md:w-1/2 lg:w-3/4 bg-base-500 h-12 mb-8">
+        <div className="md:w-1/2 lg:w-3/4 bg-base-500 mb-8">
           <div className="flex flex-wrap justify-center">
             {courses.map((course) => (
               <CourseCardComponent

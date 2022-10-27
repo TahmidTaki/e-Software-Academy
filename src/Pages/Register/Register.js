@@ -1,11 +1,13 @@
 import React from "react";
 import { useContext } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthProvider/AuthProvider";
 
 const Register = () => {
   const { user } = useContext(AuthContext);
   const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
   const { registerWithEmail, updateUserProfile } = useContext(AuthContext);
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -26,7 +28,7 @@ const Register = () => {
         console.log(user);
         form.reset();
         handleUpdateUserProfile(name, photoURL);
-        navigate("/");
+        navigate(from, { replace: true });
       })
       .catch((err) => {
         console.log(err);

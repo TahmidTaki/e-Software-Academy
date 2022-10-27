@@ -1,70 +1,27 @@
-# Getting Started with Create React App
+# e-Software_academy -Software Engineering Website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+An online based learning platform for those who want to be a software engineer with ReactJS.
 
-## Available Scripts
+## Live site Link
 
-In the project directory, you can run:
+The live site can be accessed here: [e-Software Academy]().
 
-### `npm start`
+## Technologies used in the project
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- ReactJS, React Router Dom, React-Icons
+- Firebase Authentication (email, password, Social: Google Singin, GitHub Sign in)
+- React-to-PDF
+- Tailwind CSS
+- ExpressJS for server side data loading
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Features of the project
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- You can register yourself using email, password.
+- For user's conveniecne, it is also possible to register using Google/GitHub account just by clicking a button.
+- Courses of relevent fields can be viewed in the courses tab.
+- Upon clicking any course from the left navbar or from course title, you will be redirected to that specific course page.
+- You can download the course details in PDF format upon clicking the download PDF button.
+- If the user is not logged in, they cannot go to the "Premium Access Page".
+- If user is not logged in and tries to go to a private page, he/she will be redirected to the login page. After loggin in, the user will automatically be redirected back to the last protected page they were trying to access with authorization.
+- This is a Single Page Application (SPA). Navigating between pages is smoother than ever.
+- If user is logged in, user's profile picture will be shown in the navbar. If user hovers on the profile picture, their Full Name will be shown in tooltip.

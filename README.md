@@ -1,10 +1,10 @@
 # e-Software_academy -Software Engineering Website
 
-An online based learning platform for those who want to be a software engineer with ReactJS.
+An online based learning platform for those who want to be a software engineer (built & developed with ReactJS).
 
 ## Live site Link
 
-The live site can be accessed here: [e-Software Academy]().
+The live site can be accessed here: [e-Software Academy](https://e-software-academy.web.app/).
 
 ## Technologies used in the project
 
@@ -12,6 +12,7 @@ The live site can be accessed here: [e-Software Academy]().
 - Firebase Authentication (email, password, Social: Google Singin, GitHub Sign in)
 - React-to-PDF
 - Tailwind CSS
+- Vercel for server-side data hosting
 - ExpressJS for server side data loading
 
 ## Features of the project

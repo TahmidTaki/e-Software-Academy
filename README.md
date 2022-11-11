@@ -18,11 +18,11 @@ The live site can be accessed here: [e-Software Academy](https://e-software-acad
 ## Features of the project
 
 - You can register yourself using email, password.
-- For user's conveniecne, it is also possible to register using Google/GitHub account just by clicking a button.
-- Courses of relevent fields can be viewed in the courses tab.
+- For user's convenience, it is also possible to register using Google/GitHub account just by clicking a button.
+- Courses of relevant fields can be viewed in the courses tab.
 - Upon clicking any course from the left navbar or from course title, you will be redirected to that specific course page.
 - You can download the course details in PDF format upon clicking the download PDF button.
 - If the user is not logged in, they cannot go to the "Premium Access Page".
-- If user is not logged in and tries to go to a private page, he/she will be redirected to the login page. After loggin in, the user will automatically be redirected back to the last protected page they were trying to access with authorization.
+- If user is not logged in and tries to go to a private page, he/she will be redirected to the login page. After logging in, the user will automatically be redirected back to the last protected page they were trying to access with authorization.
 - This is a Single Page Application (SPA). Navigating between pages is smoother than ever.
 - If user is logged in, user's profile picture will be shown in the navbar. If user hovers on the profile picture, their Full Name will be shown in tooltip.
